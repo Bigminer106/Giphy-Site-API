@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Giphy-Style</title>
+  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+  <script src="./assets/javascript/jquery-3.3.1.js"></script>
   <script src="./assets/javascript/app.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 <body>
-  <div class="jumbotron">
+
+  <div class="jumbotron" style="text-align: center;">
     <h1 class="display-4">Doin' It Giphy-Style!!</h1>
     <hr class="my-4">
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Video Games</a>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Movies</a>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Nerd Stuff</a>
-      <input class="btn btn-primary btn-lg" type="reset" value="Reset">
+      <input class="btn btn-primary btn-sm" id="reset" type="reset" value="Reset">
     </p>
   </div>
-  
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <div id="buttons" style="margin-left: 22%; display: inline;"></div><hr>
+  <div id="images"></div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
