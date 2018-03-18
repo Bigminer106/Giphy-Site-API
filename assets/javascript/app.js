@@ -24,19 +24,17 @@ $(document).ready(() => {
         'Video Games',
         'Lord of the Rings',
         'Assassin\'s Creed',
-        'Cats',
+        'Mass Effect',
         'Dogs',
-        'PICKLE RICK!!',
-        'TINY RICK!!'
+        'Cats'
       ];
       var buttons = [
           `<button class="btn btn-secondary" id="gamer"><p>${topics[0]}</p></button>`,
           `<button class="btn btn-secondary" id="lotr"><p>${topics[1]}</p></button>`,
           `<button class="btn btn-secondary" id="acreed"><p>${topics[2]}</p></button>`,
-          `<button class="btn btn-secondary" id="kitty"><p>${topics[3]}</p></button>`,
+          `<button class="btn btn-secondary" id="mass-effect"><p>${topics[3]}</p></button>`,
           `<button class="btn btn-secondary" id="pupper"><p>${topics[4]}</p></button>`,
-          `<button class="btn btn-secondary" id="pickle"><p>${topics[5]}</p></button>`,
-          `<button class="btn btn-secondary" id="tiny"><p>${topics[6]}</p></button>`
+          `<button class="btn btn-secondary" id="kitty"><p>${topics[5]}</p></button>`
       ];
 
       for (var i = 0; i < buttons.length; i++) {
@@ -44,7 +42,7 @@ $(document).ready(() => {
       };
 
       $('#gamer').on('click', () => {
-        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=video+games&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=video+games`;
 
         $.ajax({
           url: queryURL,
@@ -52,21 +50,24 @@ $(document).ready(() => {
           method: "GET"
         })
         .then(response => {
-          var imageURL = response.data.image_original_url;
-          console.log('Success ' + response.data);
-          for (let i = 0; i < response.data.length; i++) {
-            var gameImage = $('<img>');
+          console.log('Success');
 
-            gameImage.attr('src', imageURL);
-            gameImage.attr('alt', 'game image');
+          var data = response.data;
 
-            $('$images').prepend(gameImage);
-          }
+          console.log(data);
+
+          var imageURL = data.image_original_url;
+          var gameImage = $('<img>');
+
+          gameImage.attr('src', imageURL);
+          gameImage.attr('alt', 'game image');
+
+          $('#images').prepend(gameImage);
         });
       });
 
       $('#lotr').on('click', () => {
-        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=lord+of+the+rings`;
 
         $.ajax({
           url: queryURL,
@@ -74,21 +75,23 @@ $(document).ready(() => {
           method: "GET"
         })
         .then(response => {
-          var imageURL = response.data.image_original_url;
+          console.log('Success');
+          var data = response.data;
 
-          for (let i = 0; i < response.data.length; i++) {
-            var lotrImage = $('<img>');
+          console.log(data);
+        
+          var imageURL = data.image_original_url;
+          var lotrImage = $('<img>');
 
-            lotrImage.attr('src', imageURL);
-            lotrImage.attr('alt', 'lotr image');
+          lotrImage.attr('src', imageURL);
+          lotrImage.attr('alt', 'lotr image');
 
-            $('$images').prepend(lotrImage);
-          }
+          $('#images').prepend(lotrImage);
         });
       });
 
       $('#acreed').on('click', () => {
-        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=assassins+creed`;
 
         $.ajax({
           url: queryURL,
@@ -96,21 +99,24 @@ $(document).ready(() => {
           method: "GET"
         })
         .then(response => {
-          var imageURL = response.data.image_original_url;
+          console.log('Success');
+
+          var data = response.data;
+
+          console.log(data);
           
-          for (let i = 0; i < response.data.length; i++) {
-            var aCreedImage = $('<img>');
+          var imageURL = data.image_original_url;
+          var aCreedImage = $('<img>');
 
-            aCreedImage.attr('src', imageURL);
-            aCreedImage.attr('alt', ' image');
+          aCreedImage.attr('src', imageURL);
+          aCreedImage.attr('alt', ' image');
 
-            $('$images').prepend(aCreedImage);
-          }
+          $('#images').prepend(aCreedImage);
         });
       });
 
       $('#kitty').on('click', () => {
-        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=cats&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=cats`;
 
         $.ajax({
           url: queryURL,
@@ -118,21 +124,24 @@ $(document).ready(() => {
           method: "GET"
         })
         .then(response => {
-          var imageURL = response.data.image_original_url;
+          console.log('Success');
+
+          var data = response.data;
+
+          console.log(data);
           
-          for (let i = 0; i < response.data.length; i++) {
-            var catImage = $('<img>');
+          var imageURL = data.image_original_url;
+          var catImage = $('<img>');
 
-            catImage.attr('src', imageURL);
-            catImage.attr('alt', 'cat image');
+          catImage.attr('src', imageURL);
+          catImage.attr('alt', 'cat image');
 
-            $('$images').prepend(catImage);
-          }
+          $('#images').prepend(catImage);
         });
       });
 
       $('#pupper').on('click', () => {
-        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=dogs`;
 
         $.ajax({
           url: queryURL,
@@ -140,21 +149,24 @@ $(document).ready(() => {
           method: "GET"
         })
         .then(response => {
-          var imageURL = response.data.image_original_url;
-          
-          for (let i = 0; i < response.data.length; i++) {
-            var pupperImage = $('<img>');
+          console.log('Success');
 
-            pupperImage.attr('src', imageURL);
-            pupperImage.attr('alt', 'pupper image');
+          var data = response.data;
 
-            $('$images').prepend(pupperImage);
-          }
+          console.log(data);
+
+          var imageURL = data.image_original_url;
+          var pupperImage = $('<img>');
+
+          pupperImage.attr('src', imageURL);
+          pupperImage.attr('alt', 'pupper image');
+
+          $('#images').prepend(pupperImage);
         });
       });
 
-      $('#pickle').on('click', () => {
-        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
+      $('#mass-effect').on('click', () => {
+        var queryURL = `https://api.giphy.com/v1/gifs/random?api_key=${giphyKey}&tag=mass+effect`;
 
         $.ajax({
           url: queryURL,
@@ -162,38 +174,19 @@ $(document).ready(() => {
           method: "GET"
         })
         .then(response => {
-          var imageURL = response.data.image_original_url;
-          
-          for (let i = 0; i < response.data.length; i++) {
-            var pickleImage = $('<img>');
+          console.log('Success');
 
-            pickleImage.attr('src', imageURL);
-            pickleImage.attr('alt', 'pickle image');
+          var data = response.data;
 
-            $('$images').prepend(pickleImage);
-          }
-        });
-      });
+          console.log(data);
 
-      $('#tiny').on('click', () => {
-        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
+          var imageURL = data.image_original_url;
+          var massEffectImage = $('<img>');
 
-        $.ajax({
-          url: queryURL,
-          dataType: 'jsonp',
-          method: "GET"
-        })
-        .then(response => {
-          var imageURL = response.data.image_original_url;
-          
-          for (let i = 0; i < response.data.length; i++) {
-            var tinyImage = $('<img>');
+          massEffectImage.attr('src', imageURL);
+          massEffectImage.attr('alt', 'mass-effect image');
 
-            tinyImage.attr('src', imageURL);
-            tinyImage.attr('alt', 'tiny image');
-
-            $('$images').prepend(tinyImage);
-          }
+          $('#images').prepend(massEffectImage);
         });
       });
     }
