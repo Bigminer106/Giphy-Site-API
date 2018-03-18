@@ -16,7 +16,6 @@ $(document).ready(() => {
   var giphyKey = '23WDFQu8WREmcjjea8uM2Js83W8G042M';
   var limit = 10;
   var queryString;
-  var apiRequest;
 
   var showGifs = () => {
 
@@ -45,7 +44,7 @@ $(document).ready(() => {
       };
 
       $('#gamer').on('click', () => {
-        var queryURL = `api.giphy.com/v1/gifs/random?api-key=${giphyKey}&tag=video+games&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=video+games&limit=10`;
 
         $.ajax({
           url: queryURL,
@@ -67,7 +66,7 @@ $(document).ready(() => {
       });
 
       $('#lotr').on('click', () => {
-        var queryURL = `api.giphy.com/v1/gifs/random?api-key=${giphyKey}&tag=lord+of+the+rings&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
 
         $.ajax({
           url: queryURL,
@@ -89,7 +88,7 @@ $(document).ready(() => {
       });
 
       $('#acreed').on('click', () => {
-        var queryURL = `api.giphy.com/v1/gifs/random?api-key=${giphyKey}&tag=lord+of+the+rings&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
 
         $.ajax({
           url: queryURL,
@@ -111,7 +110,7 @@ $(document).ready(() => {
       });
 
       $('#kitty').on('click', () => {
-        var queryURL = `api.giphy.com/v1/gifs/random?api-key=${giphyKey}&tag=cats&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=cats&limit=10`;
 
         $.ajax({
           url: queryURL,
@@ -133,7 +132,7 @@ $(document).ready(() => {
       });
 
       $('#pupper').on('click', () => {
-        var queryURL = `api.giphy.com/v1/gifs/random?api-key=${giphyKey}&tag=lord+of+the+rings&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
 
         $.ajax({
           url: queryURL,
@@ -155,7 +154,7 @@ $(document).ready(() => {
       });
 
       $('#pickle').on('click', () => {
-        var queryURL = `api.giphy.com/v1/gifs/random?api-key=${giphyKey}&tag=lord+of+the+rings&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
 
         $.ajax({
           url: queryURL,
@@ -177,7 +176,7 @@ $(document).ready(() => {
       });
 
       $('#tiny').on('click', () => {
-        var queryURL = `api.giphy.com/v1/gifs/random?api-key=${giphyKey}&tag=lord+of+the+rings&limit=10`;
+        var queryURL = `https://api.giphy.com/v1/gifs/search?api-key=${giphyKey}&q=lord+of+the+rings&limit=10`;
 
         $.ajax({
           url: queryURL,
